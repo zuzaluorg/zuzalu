@@ -30,18 +30,19 @@ const AboutPage = () => (
                     <h1 className="font-[600] text-[52px]">Join us!</h1>
                     <div className="flex flex-col text-[16px] gap-1">
                         <h1>There are many ways to participate in Zuzalu.</h1>
+                        <a
+                            href="https://zuzalu.notion.site/Homepage-cb20817c7ca54ca6a151915babd03c38"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span className="text-zulalu-primary underline">Check out our notion</span>
+                        </a>
                         <h1>
-                            You{" "}
-                            <span className="text-zulalu-primary underline">
-                                can attend an event, apply to be a resident
-                            </span>
-                        </h1>
-                        <h1>
-                            or
-                            <a href="https://airtable.com/shrRZrZbozPE2g6HH" target="_blank" rel="noopener noreferrer">
+                            and
+                            <a href="https://t.me/+iXBJiYc8PkQ3NWFl" target="_blank" rel="noopener noreferrer">
                                 <span className="text-zulalu-primary underline">
                                     {" "}
-                                    apply for a short-term visitor pass.
+                                    our announcement telegram channel.
                                 </span>
                             </a>
                         </h1>
