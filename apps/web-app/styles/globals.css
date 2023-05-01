@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-shadow {
+    @apply shadow;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pretix-widget-attribution a {
+    @apply hidden;
+}
+
+.pretix-widget-loading {
+    @apply hidden;
+}
+
+.pretix-widget :not([class]):not([id]) button {
+    @apply bg-brand-yellow;
+    @apply text-brand-black;
+    @apply rounded-full;
+    @apply drop-shadow;
+    @apply font-medium;
+    @apply ring-2;
+    @apply ring-brand-black;
+    @apply w-auto;
+    @apply border-0;
+    @apply py-1;
+    @apply px-12;
+    @apply my-2;
+}
+
+.pretix-widget :not([class]):not([id]) button:hover {
+    @apply bg-brand-yellow;
+    @apply text-black;
+}
+
+.pretix-widget :not([class]):not([id]) button:focus {
+    @apply bg-brand-yellow;
+    @apply text-black;
+}
