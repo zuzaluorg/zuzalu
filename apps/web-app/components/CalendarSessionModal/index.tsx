@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react"
 import { useRouter } from "next/router"
 import { Fragment, useRef, useState } from "react"
+import { format, parse, startOfDay } from "date-fns"
 import { toast } from "react-toastify"
 import axios from "axios"
 import moment from "moment"
@@ -29,7 +30,7 @@ const CalendarSessionModal = ({ isOpen, closeModal, events, sessions, event }: P
         description: "",
         name: "",
         team_members: [],
-        startDate: moment.utc().toDate(),
+        startDate: format(new Date(), "yyyy-MM-dd"),
         startTime: "",
         endTime: "",
         location: "",
@@ -68,7 +69,6 @@ const CalendarSessionModal = ({ isOpen, closeModal, events, sessions, event }: P
                     }
                 }
             )
-            console.log("DB response: ", createEventDB)
         } catch (error) {
             console.log("Error creating session", error)
             toast.error("Failed to create an event", {
@@ -92,7 +92,7 @@ const CalendarSessionModal = ({ isOpen, closeModal, events, sessions, event }: P
             description: "",
             name: "",
             team_members: [],
-            startDate: moment().utc().toDate(),
+            startDate: format(new Date(), "yyyy-MM-dd"),
             startTime: "00",
             endTime: "00",
             location: "Amphitheater",

@@ -1,7 +1,7 @@
-import moment from "moment"
 import NextImage from "next/image"
 import { IoMdArrowBack } from "react-icons/io"
 import { Parser } from "html-to-react"
+import { format, parse } from "date-fns"
 
 import Loading from "../Loading"
 import { NewSessionState } from "../../types"
@@ -27,7 +27,7 @@ const Step2 = ({ setSteps, newSession, handleSubmit, isLoading }: Props) => {
                 </div>
                 <div className="flex items-center gap-2">
                     <NextImage src="/vector-calendar.svg" width={20} height={20} />
-                    <h1>{moment.utc(newSession.startDate).format("dddd, MMMM DD")}</h1>
+                    <h1>{format(parse(newSession.startDate, "yyyy-MM-dd", new Date()), "EEEE, MMMM dd")}</h1>
                 </div>
                 <div className="flex items-center gap-2">
                     <NextImage src="/vector-location.svg" width={20} height={20} />
