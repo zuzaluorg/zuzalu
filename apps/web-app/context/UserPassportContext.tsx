@@ -73,7 +73,7 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
         try {
             await axios({
                 method: "post",
-                url: "https://7f2b-94-102-228-99.ngrok-free.app/api/passport-user-login/",
+                url: "https://zuzalu-dev.vercel.app/api/passport-user-login/",
                 data: { participant1, pcdStr },
                 headers: {
                     "Content-Type": "application/json",
