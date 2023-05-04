@@ -10,21 +10,24 @@ const projects = [
         img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/photo_2023-04-24_10-55-21.jpg",
         link: "https://t.me/rubduck_bot"
     },
-    // {
-    //     name: "ZK polling for organizers",
-    //     desc: "Lorem ipsum dolor sit amet consectetur. Nunc urna elementum nec at lacus vel. Risus augue posuere consectetur risus sed.",
-    //     img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/Frame%201470.png"
-    // },
-    // {
-    //     name: "Make me a match",
-    //     desc: "Lorem ipsum dolor sit amet consectetur. Nunc urna elementum nec at lacus vel. Risus augue posuere consectetur risus sed.",
-    //     img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/Frame%201470.png"
-    // },
-    // {
-    //     name: "Zuzalu Yearbook",
-    //     desc: "Lorem ipsum dolor sit amet consectetur. Nunc urna elementum nec at lacus vel. Risus augue posuere consectetur risus sed.",
-    //     img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/Frame%201470.png"
-    // }
+    {
+        name: "Zupoll",
+        desc: "Zupoll is a practical platform designed for Zuzalu residents and organizers to generate and vote on polls anonymously. While only organizers can create official advisory ballots, all residents can create unofficial ones. Zupoll promotes community engagement and allows for anonymous participation. Use Zupoll to actively contribute to decisions affecting the Zuzalu community.",
+        img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/zupoll3.jpg",
+        link: "https://zupoll.org/"
+    },
+    {
+        name: "Zucast",
+        desc: "Zucast is an anonymous forum designed for the Zuzalu community. Using zero-knowledge proof from Zuzalu passports, your identity stays hidden from the server, ensuring complete privacy. Connect and share your thoughts with fellow residents while keeping your anonymity. Give Zucast a try for a secure and private social experience in Zuzalu.",
+        img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/zucast.jpg?t=2023-05-04T15%3A33%3A57.518Z",
+        link: "https://zuca.st/"
+    },
+    {
+        name: "Zuzalu Network",
+        desc: "https://zuzalu.network is an instance of a Plural Communication Channel (PCC) built by the Plurality Network. The tool is a playful first step towards decentralized agenda setting, question curation and community deliberation through collusion-resistant quadratic voting. The tool captures the intensity of individual preferences, but elevates insights shared by less affiliated members to surface issues more likely to be in the community’s interest, rather than a social cluster’s interest. To augment community deliberation, we have integrated this tool with pol.is, so talks may discover the consensus and cleave points between social groups. To learn more, please visit us.",
+        img: "https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/zu-network.jpg",
+        link: "https://zuzalu.network/"
+    }
 ]
 
 const Zapps = () => (
@@ -45,20 +48,20 @@ const Zapps = () => (
             <div className="hidden md:grid grid-cols-3 w-full gap-5">
                 {projects.map((item, index) => (
                     <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
-
-                    <div key={index} className="flex h-[250px] flex-col shadow-md rounded-[16px]">
-                        <NextImage
-                            style={{ borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}
-                            src={item.img}
-                            width={500}
-                            height={400}
-                            objectFit="cover"
-                        />
-                        <div className="flex flex-col p-5 gap-2 h-3/6 mb-5">
-                            <h1 className="text-[18px] font-[600]">{item.name}</h1>
-                            <h1 className="text-[10px] mb-10">{item.desc}</h1>
+                        <div key={index} className="flex flex-col shadow-md rounded-[16px] h-[300px]">
+                            <div className="relative" style={{ height: "400px" }}>
+                                <NextImage
+                                    className="absolute inset-0 w-full h-full object-cover rounded-t-[16px]"
+                                    src={item.img}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </div>
+                            <div className="flex flex-col p-5 gap-2 flex-grow">
+                                <h1 className="text-[18px] font-[600]">{item.name}</h1>
+                                <h1 className="text-[10px]">{item.desc}</h1>
+                            </div>
                         </div>
-                    </div>
                     </a>
                 ))}
             </div>
