@@ -58,20 +58,21 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
         endTime,
         location,
         equipment,
-        event_id,
         description,
         maxRsvp,
         track
     } = newSession
 
-    const wraperRef = useRef(null)
+    // const wraperRef = useRef(null)
     const [tag, setTag] = useState("")
     const [rerender, setRerender] = useState(true)
 
-    const [teamMemberInput, setTeamMemberInput] = useState("")
+    // const [teamMemberInput, setTeamMemberInput] = useState("")
+    const [teamMember, setTeamMember] = useState({ name: "", role: "Speaker" })
+    // const [display, setDisplay] = useState(false)
+
     const [suggestions, setSuggestions] = useState<UserDTO[]>([])
 
-    const [display, setDisplay] = useState(false)
     const [tracksOpt, setTracksOpt] = useState<TracksDTO[]>([])
     const [formatsOpt, setFormatsOpt] = useState<FormatDTO[]>()
     const [levelsOpt, setLevelsOpt] = useState<LevelDTO[]>()
@@ -116,9 +117,22 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
         }
     }
 
-    const handleAddTeamMember = ({ userName, role }: { userName: string; role: string }) => {
-        setNewSession({ ...newSession, team_members: [...newSession.team_members, { name: userName, role }] })
-        setDisplay(false)
+    // const handleAddTeamMember = () => {
+    //     setNewSession({ ...newSession, team_members: [...newSession.team_members, { name: teamMemberInput, role }] })
+    //     setDisplay(false)
+    // }
+
+    // const handleAddTeamMember = ({ userName, role }: { userName: string; role: string }) => {
+    //     setNewSession({ ...newSession, team_members: [...newSession.team_members, { name: userName, role }] })
+    //     setDisplay(false)
+    // }
+
+    const handleAddTeamMember = () => {
+        setNewSession({ ...newSession, team_members: [...newSession.team_members, teamMember] })
+        setTeamMember({ name: "", role: "Speaker" })
+
+        const selectedRole = teamMember.role
+        setTeamMember({ name: "", role: selectedRole })
     }
 
     const handleRemoveTeamMember = (index: number) => {
@@ -137,13 +151,13 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
         setRerender(!rerender)
     }
 
-    const handleClickOutside = (e: MouseEvent) => {
-        const { current: wrap } = wraperRef as { current: HTMLElement | null }
+    // const handleClickOutside = (e: MouseEvent) => {
+    //     const { current: wrap } = wraperRef as { current: HTMLElement | null }
 
-        if (wrap && !wrap.contains(e.target as Node)) {
-            setDisplay(false)
-        }
-    }
+    //     if (wrap && !wrap.contains(e.target as Node)) {
+    //         setDisplay(false)
+    //     }
+    // }
 
     const fetchTraks = async () => {
         await axios
@@ -235,13 +249,13 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
         Promise.all([fetchLevels(), fetchEventTypes(), fetchFormats(), fetchLocations(), fetchTraks()])
     }, [])
 
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside)
+    // useEffect(() => {
+    //     document.addEventListener("mousedown", handleClickOutside)
 
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside)
-        }
-    }, [])
+    //     return () => {
+    //         document.removeEventListener("mousedown", handleClickOutside)
+    //     }
+    // }, [])
 
     const isOverlapping = (filteredSessions: SessionsDTO[]) =>
         filteredSessions.some(
@@ -302,11 +316,11 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
         setSteps(2)
     }
 
-    const teamMembersCheck = team_members.map((item) => item.name)
-    const checkIfAnyOtherSuggestion =
-        suggestions
-            .filter((item) => !teamMembersCheck.includes(item.userName))
-            .filter(({ userName }) => userName.toLowerCase().indexOf(teamMemberInput.toLowerCase()) > -1).length !== 0
+    // const teamMembersCheck = team_members.map((item) => item.name)
+    // const checkIfAnyOtherSuggestion =
+    //     suggestions
+    //         .filter((item) => !teamMembersCheck.includes(item.userName))
+    //         .filter(({ userName }) => userName.toLowerCase().indexOf(teamMemberInput.toLowerCase()) > -1).length !== 0
 
     return (
         <div className="flex flex-col w-full">
@@ -456,62 +470,65 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
             </div>
 
             <div className="flex flex-col gap-4 w-full my-8">
-                <label htmlFor="tags" className="font-[600]">
-                    Organizers*
-                </label>
-                <div className="flex flex-col relative" ref={wraperRef}>
-                    <div className="flex flex-row gap-4">
+                <div className="flex flex-col md:flex-row w-full gap-4">
+                    <div className="flex flex-col md:w-3/6 w-full">
+                        <label htmlFor="team-members" className="font-[600]">
+                            Organizers*
+                        </label>
                         <input
-                            id="organizers"
+                            id="tags"
                             type="text"
-                            className="border-[#C3D0CF] w-full border-2 p-1 rounded-[8px] h-[42px]"
-                            placeholder="People or organizations. Type to search for people"
-                            value={teamMemberInput}
-                            onChange={(e) => setTeamMemberInput(e.target.value)}
-                            onClick={() => setDisplay(true)}
+                            className="border-[#C3D0CF] bg-white border-2 p-1 rounded-[8px] h-[42px] w-full"
+                            placeholder="Add team member"
+                            value={teamMember.name}
+                            onChange={(e) => setTeamMember({ ...teamMember, name: e.target.value })}
                         />
                     </div>
-                    {display && (
-                        <div className="border border-[#C3D0CF] py-2 rounded-[8px] custom-shadow bg-white flex flex-col absolute top-[45px] w-full z-10">
-                            {checkIfAnyOtherSuggestion ? (
-                                suggestions
-                                    .filter((item) => !teamMembersCheck.includes(item.userName))
-                                    .filter((item) =>
-                                        item.userName.toLocaleLowerCase().includes(teamMemberInput.toLocaleLowerCase())
-                                    )
-                                    .map((item, index) => (
-                                        <div
-                                            key={index}
-                                            onClick={() =>
-                                                handleAddTeamMember({ userName: item.userName, role: item.role })
-                                            }
-                                            className="flex h-[40px] text-[12px] items-center px-2 uppercase hover:bg-[#CBE9E4] cursor-pointer transition duration-300 ease-in-out"
-                                        >
-                                            <span>{item.userName}</span>
-                                        </div>
-                                    ))
-                            ) : (
-                                <div className="flex h-[40px] items-center text-[12px] px-2 uppercase hover:bg-black hover:text-white cursor-pointer transition duration-300 ease-in-out">
-                                    <span>No user found</span>
-                                </div>
-                            )}
-                        </div>
-                    )}
-                    <div className="flex flex-wrap gap-2 py-2">
-                        {team_members.length > 0 &&
-                            team_members.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex gap-2 items-center justify-center w-auto bg-[#E4EAEA] p-1 text-[14px] rounded-[4px]"
-                                >
-                                    <NextImage src={UserIcon} width={25} height={25} />
-                                    <p>{item.name}</p>
-                                    <h1 className="cursor-pointer" onClick={() => handleRemoveTeamMember(index)}>
-                                        x
-                                    </h1>
-                                </div>
-                            ))}
+                    <div className="flex flex-col w-full md:w-3/6">
+                        <label htmlFor="role" className="font-[600]">
+                            Role*
+                        </label>
+                        <select
+                            id="role"
+                            name="role"
+                            className="border-[#C3D0CF] bg-white border-2 p-1 rounded-[8px] h-[42px] w-full"
+                            onChange={(e) => setTeamMember({ ...teamMember, role: e.target.value })}
+                        >
+                            <option value="Speaker">Speaker</option>
+                            <option value="Organizer">Organizer</option>
+                            <option value="Facilitator">Facilitator</option>
+                        </select>
                     </div>
+                </div>
+                <div className="flex flex-col gap-4">
+                    <button
+                        className="flex flex-row font-[600] w-full justify-center items-center py-[8px] px-[16px] gap-[8px] bg-[#35655F] rounded-[8px] text-white text-[16px]"
+                        onClick={() => handleAddTeamMember()}
+                    >
+                        ADD
+                    </button>
+                    <ul className="flex flex-row items-center">
+                        {team_members.map((item, index) => (
+                            <div
+                                className="flex flex-row items-center bg-[#E4EAEA] py-[4px] px-[8px] gap-[8px] text-sm rounded-[4px] mr-[8px] cursor-pointer"
+                                key={index}
+                                onClick={() => handleRemoveTeamMember(index)}
+                            >
+                                {item.role === "Speaker" && (
+                                    <NextImage src={"/user-icon-6.svg"} alt="user-icon-6" width={24} height={24} />
+                                )}
+                                {item.role === "Organizer" && (
+                                    <NextImage src={"/user-icon-4.svg"} alt="user-icon-6" width={24} height={24} />
+                                )}
+                                {item.role === "Facilitator" && (
+                                    <NextImage src={"/user-icon-5.svg"} alt="user-icon-6" width={24} height={24} />
+                                )}
+                                <p className="text-[#1C2928] font-[400] text-[16px]">
+                                    {item.role}: <span className="font-[600] capitalize">{item.name}</span>
+                                </p>
+                            </div>
+                        ))}
+                    </ul>
                 </div>
             </div>
 
