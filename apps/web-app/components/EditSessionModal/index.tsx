@@ -7,34 +7,8 @@ import axios from "axios"
 import ModalSteps from "./ModalSteps"
 import Step1 from "./Step1"
 import Step2 from "./Step2"
-import { EventsDTO, SessionsDTO } from "../../types"
-import { displayDateWithoutTimezone, to24HourFormat, to12HourFormat } from "../../data/dateFormat"
-
-type NewSessionState = {
-    description: string
-    equipment: string
-    event_id: number
-    event_type: string
-    maxRsvp: string
-    format: string
-    hasTicket: boolean
-    info: string
-    level: string
-    location: string
-    custom_location: string
-    name: string
-    startDate: string
-    endTime: string
-    startTime: string
-    tags: string[]
-    team_members: {
-        name: string
-        role: string
-    }[]
-    track: string
-    event_slug: string
-    event_item_id: number
-}
+import { EventsDTO, SessionsDTO, NewSessionState } from "../../types"
+import { to12HourFormat, to24HourFormat } from "../../data/dateFormat"
 
 type Props = {
     isOpen: boolean
@@ -53,7 +27,7 @@ const EditSessionModal = ({ isOpen, closeModal, session, sessions, events }: Pro
         description: session.description,
         name: session.name,
         team_members: session.team_members,
-        startDate: displayDateWithoutTimezone(session.startDate),
+        startDate: String(session.startDate),
         startTime: to12HourFormat(session.startTime),
         endTime: to12HourFormat(session.end_time),
         location: session.location,
@@ -118,7 +92,7 @@ const EditSessionModal = ({ isOpen, closeModal, session, sessions, events }: Pro
             description: session.description,
             name: session.name,
             team_members: session.team_members,
-            startDate: displayDateWithoutTimezone(session.startDate),
+            startDate: String(session.startDate),
             startTime: session.startTime,
             endTime: session.end_time,
             location: session.location,

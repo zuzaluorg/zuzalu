@@ -1,6 +1,7 @@
 import { ComponentType, useEffect, useRef, useState } from "react"
 import dynamic, { Loader } from "next/dynamic"
 import DatePicker from "react-datepicker"
+import { format, parse, startOfDay } from "date-fns"
 import NextImage from "next/image"
 import axios from "axios"
 import moment from "moment"
@@ -15,34 +16,18 @@ import UserIcon from "../../public/userIcon.svg"
 
 import TimeDropdown from "../TimeDropdown"
 
-import { TracksDTO, FormatDTO, LevelDTO, LocationDTO, EventTypeDTO, EventsDTO, SessionsDTO, UserDTO } from "../../types"
+import {
+    TracksDTO,
+    FormatDTO,
+    LevelDTO,
+    LocationDTO,
+    EventTypeDTO,
+    EventsDTO,
+    SessionsDTO,
+    UserDTO,
+    NewSessionState
+} from "../../types"
 import { to12HourFormat, to24HourFormat } from "../../data/dateFormat"
-
-type NewSessionState = {
-    description: string
-    equipment: string
-    event_id: number
-    event_type: string
-    maxRsvp: string
-    format: string
-    hasTicket: boolean
-    info: string
-    level: string
-    location: string
-    custom_location: string
-    name: string
-    startDate: string
-    endTime: string
-    startTime: string
-    tags: string[]
-    team_members: {
-        name: string
-        role: string
-    }[]
-    track: string
-    event_slug: string
-    event_item_id: number
-}
 
 type Props = {
     newSession: NewSessionState
@@ -71,7 +56,6 @@ const Step1 = ({ newSession, setNewSession, setSteps, sessions, events, sessionI
         endTime,
         equipment,
         location,
-        event_id,
         description,
         maxRsvp,
         track
@@ -383,12 +367,12 @@ const Step1 = ({ newSession, setNewSession, setSteps, sessions, events, sessionI
                     <label className="font-[600]">Date*</label>
                     <DatePicker
                         className="border-[#C3D0CF] border-2 p-1 rounded-[8px] h-[42px] w-full"
-                        selected={new Date(startDate)}
+                        selected={parse(startDate, "yyyy-MM-dd", new Date())}
                         onChange={(e: any) => {
-                            const newDate = moment.utc(e).format("YYYY-MM-DD")
+                            const newDate = format(e, "yyyy-MM-dd")
                             setNewSession({ ...newSession, startDate: newDate })
                         }}
-                        minDate={moment().toDate()}
+                        minDate={startOfDay(new Date())}
                     />
                 </div>
                 <div className="flex flex-col w-full md:w-2/6">

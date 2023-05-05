@@ -1,35 +1,10 @@
-import moment from "moment"
 import NextImage from "next/image"
 import { IoMdArrowBack } from "react-icons/io"
 import { Parser } from "html-to-react"
+import { format, parse } from "date-fns"
 
 import Loading from "../Loading"
-
-type NewSessionState = {
-    description: string
-    equipment: string
-    event_id: number
-    event_type: string
-    maxRsvp: string
-    format: string
-    hasTicket: boolean
-    info: string
-    level: string
-    location: string
-    custom_location: string
-    name: string
-    startDate: string
-    endTime: string
-    startTime: string
-    tags: string[]
-    team_members: {
-        name: string
-        role: string
-    }[]
-    track: string
-    event_slug: string
-    event_item_id: number
-}
+import { NewSessionState } from "../../types"
 
 type Props = {
     setSteps: (step: number) => void
@@ -51,7 +26,7 @@ const Step2 = ({ setSteps, newSession, handleSubmit, isLoading }: Props) => {
                 </div>
                 <div className="flex items-center gap-2">
                     <NextImage src="/vector-calendar.svg" width={20} height={20} />
-                    <h1>{moment.utc(newSession.startDate).format("dddd, MMMM DD")}</h1>
+                    <h1>{format(parse(newSession.startDate, "yyyy-MM-dd", new Date()), "EEEE, MMMM dd")}</h1>
                 </div>
                 <div className="flex items-center gap-2">
                     <NextImage src="/vector-location.svg" width={20} height={20} />

@@ -144,7 +144,7 @@ export interface NewSessionState {
     location: string
     custom_location: string
     name: string
-    startDate: Date
+    startDate: string
     endTime: string
     startTime: string
     tags: string[]

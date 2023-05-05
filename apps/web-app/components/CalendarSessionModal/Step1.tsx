@@ -1,6 +1,7 @@
 import { ComponentType, useEffect, useRef, useState } from "react"
 import dynamic, { Loader } from "next/dynamic"
 import DatePicker from "react-datepicker"
+import { format, parse, startOfDay } from "date-fns"
 import NextImage from "next/image"
 import axios from "axios"
 import moment from "moment"
@@ -281,8 +282,6 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
 
                 return selectedDate.isSame(newSessionStartDate)
             })
-        console.log(newSession)
-        console.log("FILTERED", filteredSeshs)
 
         if (location === "Other") {
             return setSteps(2)
@@ -373,13 +372,15 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
             <div className="flex flex-col md:flex-row w-full gap-5 my-2">
                 <div className="flex flex-col w-full md:w-2/6 z-[10]">
                     <label className="font-[600]">Date*</label>
+
                     <DatePicker
                         className="border-[#C3D0CF] border-2 p-1 rounded-[8px] h-[42px] w-full"
-                        selected={startDate}
-                        onChange={(e: Date) => {
-                            setNewSession({ ...newSession, startDate: e })
+                        selected={parse(startDate, "yyyy-MM-dd", new Date())}
+                        onChange={(e: any) => {
+                            const newDate = format(e, "yyyy-MM-dd")
+                            setNewSession({ ...newSession, startDate: newDate })
                         }}
-                        minDate={moment().toDate()}
+                        minDate={startOfDay(new Date())}
                     />
                 </div>
                 <div className="flex flex-col w-full md:w-2/6">

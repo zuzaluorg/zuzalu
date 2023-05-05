@@ -73,7 +73,7 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
         try {
             await axios({
                 method: "post",
-                url: "https://zuzalu.city/api/passport-user-login/",
+                url: "https://zuzalu-dev.vercel.app/api/passport-user-login/",
                 data: { participant1, pcdStr },
                 headers: {
                     "Content-Type": "application/json",
