@@ -1,6 +1,5 @@
 
-
-## 📜 Usage
+# 📜 Usage
 
 Copy the `.env.example` file and rename it `.env`.
 
