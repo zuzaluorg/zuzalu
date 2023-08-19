@@ -38,13 +38,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (response.error === null) {
             const cal = ical({
                 prodId: "//zuzalu.city//sessions//EN",
+                // eslint-disable-next-line @typescript-eslint/no-shadow
                 events: response.data.map((session: any) => {
                     const sessionStartDate = new Date(`${session.startDate}T${session.startTime}+02:00`)
                     // normalize null and string `duration`s into a number with default of 60 minutes
                     let duration = 60
                     if (session.duration !== null) {
                         duration = parseFloat(session.duration)
-                        if (isNaN(duration)) {
+                        if (Number.isNaN(duration)) {
                             duration = parseFloat(session.duration.replace(/[^0-9]/g, ""))
                         }
                     }

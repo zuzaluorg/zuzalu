@@ -1,11 +1,12 @@
 // pages/api/user_by_id.js
 import { createClient } from "@supabase/supabase-js";
+import { NextApiRequest, NextApiResponse } from "next/types";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl as string, supabaseKey);
+const supabase = createClient(supabaseUrl as string, supabaseKey as string);
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
     try {
       const { id } = req.query;

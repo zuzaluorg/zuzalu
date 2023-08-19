@@ -1,9 +1,10 @@
 // pages/api/create-order.js
 import axios from "axios"
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs"
+import { NextApiRequest, NextApiResponse } from "next"
 import authMiddleware from "../../hooks/auth"
 
-const handler = async (req, res) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const auth = process.env.NEXT_PUBLIC_PRETIX_API
     const headers = {
         Accept: "application/json, text/javascript",
@@ -59,15 +60,13 @@ const handler = async (req, res) => {
         )
 
         console.log(response)
-        const inputToSupabase = await supabase
-            .from("tickets")
-            .insert({
-                email: session.user.email,
-                pdf_link: response.data.downloads[0].url,
-                name,
-                session_id: id,
-                user_id: user.data.id
-            })
+        const inputToSupabase = await supabase.from("tickets").insert({
+            email: session.user.email,
+            pdf_link: response.data.downloads[0].url,
+            name,
+            session_id: id,
+            user_id: user?.data?.id ?? undefined
+        })
 
         console.log(inputToSupabase)
         if (response.status === 201) {
