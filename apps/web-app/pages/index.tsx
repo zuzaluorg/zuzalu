@@ -90,6 +90,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
             }
         )
 
+        console.log(eventsResponse)
+
         const events: EventsDTO[] = await eventsResponse.data
 
         const responseSessions = await axios.post(
@@ -115,9 +117,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
             props: { sessions: filtered, events }
         }
     } catch (error) {
+        console.error("FETCH ERROR", error)
         res.statusCode = 404
         return {
-            props: {}
+            props: { sessions: [], events: [] }
         }
     }
 }

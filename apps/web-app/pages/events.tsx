@@ -28,12 +28,13 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 
         const events = await eventsResponse.data
         return {
-            props: { events }
+            props: { events: events || [] }
         }
     } catch (error) {
+        console.error(error)
         res.statusCode = 404
         return {
-            props: {}
+            props: { events: [] }
         }
     }
 }

@@ -1,9 +1,9 @@
 const { createClient } = require("@supabase/supabase-js")
 
 //TODO: CHANGE TO API
-const supabaseUrl = "https://polcxtixgqxfuvrqgthn.supabase.co"
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey, {
+const supabase = createClient(supabaseUrl as string, supabaseKey, {
     auth: {
         autoRefreshToken: false,
         persistSession: false,

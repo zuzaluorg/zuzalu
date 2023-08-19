@@ -1,9 +1,9 @@
 // pages/api/user_by_id.js
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://polcxtixgqxfuvrqgthn.supabase.co";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl as string, supabaseKey);
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
