@@ -55,7 +55,7 @@ const DeleteSessionModal = ({ isOpen, closeModal, deleteSession }: Props) => {
                             leaveTo="opacity-0 scale-95"
                         >
                             <Dialog.Panel className="flex flex-col min-h-[200px] h-full w-5/6 h-[100%] overflow-scroll md:overflow-hidden md:h-auto max-w-full transform rounded-lg border-[##424242] border-2 bg-white text-left align-middle shadow-xl transition-all">
-                                <div className="p-4 bg-[#EEEEF0] border-b-2">
+                                <div className="p-4 bg-fora-gray100 border-b-2">
                                     <h1 className="text-[32px] text-[#37352F] font-[600] mx-auto">Delete Session</h1>
                                 </div>
                                 {/* Step 1 */}

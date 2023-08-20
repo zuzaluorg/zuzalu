@@ -3,7 +3,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 
 const BaseTemplate = ({ children }: any) => (
-    <div className="flex flex-col min-h-screen bg-[#EEEEF0]">
+    <div className="flex flex-col min-h-screen bg-fora-gray100">
         <div className="z-20">
             <header>
                 <Header />

@@ -6,6 +6,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reckless Font */
+
+@font-face {
+    font-family: "Reckless";
+    src: url("../public/fonts/Reckless/RecklessVF-Uprights.woff2");
+}
+
+/* Avenir Font */
+
+@font-face {
+    font-family: "Avenir Next";
+    font-weight: 100;
+    src: url("../public/fonts/AvenirNext/avenir-next-ultralight.woff2");
+}
+
+
+@font-face {
+    font-family: "Avenir Next";
+    font-weight: 200;
+    src: url("../public/fonts/AvenirNext/avenir-next-thin.woff");
+}
+
+
+@font-face {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    src: url("../public/fonts/AvenirNext/avenir-next-regular.woff2");
+}
+
+@font-face {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    src: url("../public/fonts/AvenirNext/avenir-next-medium.woff2");
+}
+
+
+@font-face {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    src: url("../public/fonts/AvenirNext/avenir-next-demibold.woff2");
+}
+@font-face {
+    font-family: "Avenir Next";
+    font-weight: 700;
+    src: url("../public/fonts/AvenirNext/avenir-next-bold.woff2");
+}
+
+
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    width: 100vw;
+    overflow-x: hidden
+}
+
 .custom-shadow {
     @apply shadow;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

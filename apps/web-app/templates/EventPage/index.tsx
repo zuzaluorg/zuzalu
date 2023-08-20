@@ -175,7 +175,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
 
     return (
         <BaseTemplate>
-            <div className="flex flex-col p-5 bg-[#EEEEF0] gap-5 w-full h-full">
+            <div className="flex flex-col p-5 bg-fora-gray100 gap-5 w-full h-full">
                 <div className="flex flex-col md:flex-row justify-between p-5 bg-white rounded-[16px]">
                     <div className="flex items-center gap-2 mb-5 md:mb-0 text-[12px] md:text-[14px]">
                         <Link href="/events">

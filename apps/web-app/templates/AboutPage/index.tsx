@@ -4,7 +4,7 @@ import BaseTemplate from "../Base"
 
 const AboutPage = () => (
     <BaseTemplate>
-        <div className="flex flex-col w-full h-full bg-[#EEEEF0] p-5 gap-10">
+        <div className="flex flex-col w-full h-full bg-fora-gray100 p-5 gap-10">
             <div className="w-full h-full flex flex-col py-10 md:py-20 px-[28px] overflow-hidden  md:pr-0 pr-4 bg-white rounded-[16px] gap-10 relative">
                 <h1 className="text-[32px] md:text-[52px] font-[600] w-full md:w-[700px] pl-0 md:pl-10 z-[10]">
                     Zuzalu is a first-of-its-kind pop-up city community in

@@ -83,7 +83,7 @@ const MyProfilePage = ({ events, sessions }: Props) => {
             : sortByDate
     return (
         <BaseTemplate>
-            <div className="flex flex-col bg-[#EEEEF0] px-4 md:px-[24px] py-4 md:py-[24px] gap-4 md:gap-[16px]">
+            <div className="flex flex-col bg-fora-gray100 px-4 md:px-[24px] py-4 md:py-[24px] gap-4 md:gap-[16px]">
                 {profile ? (
                     <div className="flex md:hidden flex-col items-start gap-[8px] bg-white w-full rounded-[16px]">
                         <div className="flex flex-col items-start pt-[16px] px-[16px] pb-[24px] gap-[24px] w-full">

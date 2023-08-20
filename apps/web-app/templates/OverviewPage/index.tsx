@@ -9,7 +9,7 @@ const OverviewPage = ({ sessions }: Props) => {
 
     return (
         <BaseTemplate>
-                <div className="flex flex-col min-h-[100vh] bg-[#EEEEF0] p-5 gap-10">
+                <div className="flex flex-col min-h-[100vh] bg-fora-gray100 p-5 gap-10">
                     <h1 className="font-normal text-[32px] md:text-[52px]">Organizers Overview</h1>
                     <div className="overflow-scroll">
                         <table className="w-[600px] md:w-full p-5 text-[12px] table-fixed border-collapse border border-slate-400 p-8">

@@ -83,7 +83,7 @@ const SessionPage = ({ session, sessions, userId, events }: Props) => {
 
     return (
         <BaseTemplate>
-            <div className="flex flex-col items-center bg-[#EEEEF0] h-full px-4 md:px-[24px] py-4 md:py-[24px] gap-4 md:gap-[16px]">
+            <div className="flex flex-col items-center bg-fora-gray100 h-full px-4 md:px-[24px] py-4 md:py-[24px] gap-4 md:gap-[16px]">
                 <div className="flex flex-col md:flex-row justify-between p-5 bg-white w-full rounded-[16px]">
                     <div className="flex md:w-3/6 w-full items-center gap-2 mb-4 md:mb-0 text-[12px] md:text-[14px]">
                         <Link href={"/"}>

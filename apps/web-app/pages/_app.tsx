@@ -1,4 +1,3 @@
-// import type { AppProps } from "next/app"
 import { UserAuthenticationProvider } from "../context/UserAuthenticationContext"
 import { UserPassportContextProvider } from "../context/UserPassportContext"
 
@@ -10,10 +9,11 @@ import "react-datepicker/dist/react-datepicker.css"
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
+
 const MyApp = ({ Component, pageProps }: any) => (
     <UserAuthenticationProvider>
         <UserPassportContextProvider>
-            <Component {...pageProps} />
+                <Component {...pageProps} />
         </UserPassportContextProvider>
     </UserAuthenticationProvider>
 )

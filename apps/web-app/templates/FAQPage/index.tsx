@@ -23,7 +23,7 @@ const FAQPage = () => {
     return (
         <BaseTemplate>
             <Fragment>
-                <div className="flex flex-col border border-black p-5 bg-[#EEEEF0] gap-5 w-full h-full">
+                <div className="flex flex-col border border-black p-5 bg-fora-gray100 gap-5 w-full h-full">
                     <div className="flex gap-5 flex-col p-5 md:p-10 bg-white rounded-[16px]">
                         <h1 className="font-[600] text-[40px]">FAQ</h1>
                         <div className="shadow shadow-md flex flex-col flex bg-[#F8FAFA] rounded-[16px]">

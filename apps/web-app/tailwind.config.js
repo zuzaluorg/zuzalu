@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
     content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./templates/**/*.{js,ts,jsx,tsx}"],
@@ -12,7 +13,8 @@ module.exports = {
                 semibold: "600"
             },
             fontFamily: {
-                sans: ["Open Sans", "sans-serif"],
+                sans: ["'Avenir Next'", ...defaultTheme.fontFamily.sans],
+                serif: ["Reckless", ...defaultTheme.fontFamily.serif],
                 year: ["Poppins"],
                 cinzel: ["Cinzel", "sans-serif"]
             },
@@ -21,9 +23,9 @@ module.exports = {
                 "brand-4xl": ["2.75rem", "2.6rem"],
                 "brand-2xs": [".75rem", ".75rem"],
                 "brand-3xs": ".625rem",
-                "brand-h1": "52px",
-                "brand-h2": "20px",
-                "brand-h3": "16px",
+                "brand-h1": ["2.75rem", 1.1],
+                "brand-h2": ["2.25rem", 1.1],
+                "brand-h3": ["2rem", 1.1],
                 "brand-button": "14px",
                 "brand-body": "14px",
                 "brand-info": "12px"
@@ -41,7 +43,7 @@ module.exports = {
                     gray60: "#333333",
                     red: "#BD5141",
                     black: "#1E1E1E",
-                    yellow: "#EFAD5F",
+                    yellow: "#00FFEA",
                     yellow2: "#EFD85F",
                     orange: "#BD5141",
                     orange2: "#EE8C45",
@@ -58,6 +60,14 @@ module.exports = {
                     gradient1: "#D2F8E8CC",
                     gradient2: "#FFF250CC",
                     yellow: "#FCD270"
+                },
+                fora: {
+                    primary: "#00FFEA",
+                    secondary: "#FF8000",
+                    lightBase: "#FFF2E6",
+                    darkBase: "#29231D",
+                    gray50: "#fbfaf8",
+                    gray100: "#F8F6F2",
                 }
             },
             filter: {
