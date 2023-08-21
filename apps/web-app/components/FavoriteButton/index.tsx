@@ -125,6 +125,7 @@ const FavoriteButton = ({ session, isMiniButton }: Props) => {
                         }}
                     >
                         <NextImage
+                            alt={"Bookmark Icon"}
                             src={latestFavoritedSessionId !== null ? "/vector-bookmark2.svg" : "/vector-bookmark.svg"}
                             width={12}
                             height={16}

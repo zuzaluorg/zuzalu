@@ -207,7 +207,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                         </button>
                         <a href={event.publicUrl} target="_blank">
                             <button className="w-full md:w-auto justify-center text-center flex gap-1 items-center bg-zulalu-primary text-white py-[8px] px-[5px] md:px-[15px] font-[600] rounded-[8px] text-[12px] md:text-[16px]">
-                                <NextImage src={"/ticket.svg"} width={13} height={12} />
+                                <NextImage alt={"Ticket Icon"} src={"/ticket.svg"} width={13} height={12} />
                                 BUY TICKET
                             </button>
                         </a>
@@ -219,8 +219,8 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                             src={event.image_url}
                             objectFit="cover"
                             alt="event-image"
-                            width="1014px"
-                            height="682px"
+                            width="1014"
+                            height="682"
                         />
                     </div>
                     <div className="flex flex-col w-full lg:w-2/6 pl-5 pr-20 md:mb-0 mb-10">
@@ -252,13 +252,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                     </div>
                 </div>
                 <div className="flex md:hidden h-full max-w-[1014px] w-full rounded-[16px] overflow-hidden">
-                    <NextImage
-                        src={event.image_url}
-                        objectFit="cover"
-                        alt="event-image"
-                        width="1014px"
-                        height="682px"
-                    />
+                    <NextImage src={event.image_url} objectFit="cover" alt="event-image" width="1014" height="682" />
                 </div>
                 {userInfo && isOrganizer && (
                     <button
@@ -293,7 +287,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                                     className="flex justify-between uppercase bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
                                 >
                                     <p>Location</p>
-                                    <NextImage src={"/arrow-down.svg"} width={8} height={4} />
+                                    <NextImage alt={"Arrow down Icon"} src={"/arrow-down.svg"} width={8} height={4} />
                                 </button>
 
                                 {openLocationFilter && (
@@ -331,7 +325,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                                     className="flex justify-between uppercase bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
                                 >
                                     <p>{datePickerDescription}</p>
-                                    <NextImage src="/arrow-down.svg" width={8} height={4} />
+                                    <NextImage alt={"Arrow Down Icon"} src="/arrow-down.svg" width={8} height={4} />
                                 </button>
 
                                 {openDatePicker && (

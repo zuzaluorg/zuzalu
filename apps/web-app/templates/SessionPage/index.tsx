@@ -105,7 +105,7 @@ const SessionPage = ({ session, sessions, userId, events }: Props) => {
                             className={`flex w-full md:w-auto justify-center gap-2 items-center bg-zulalu-primary border border-primary text-white font-[600] py-[8px] px-[16px] rounded-[8px]`}
                             onClick={() => setOpenEditSessionModal(true)}
                         >
-                            <NextImage src={"/pencil.svg"} width={12} height={16} />
+                            <NextImage alt={"Edit Session Icon"} src={"/pencil.svg"} width={12} height={16} />
                             EDIT SESSION
                         </button>
                         <EditSessionModal

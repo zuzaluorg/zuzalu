@@ -105,7 +105,7 @@ const ParticipateButton = ({ session, isTallButton }: Props) => {
                             isTallButton ? 8 : 4
                         }px] px-[16px] rounded-[8px] cursor-default`}
                     >
-                        <NextImage src={"/vector-circle-check.svg"} width={16} height={16} />
+                        <NextImage alt={"Check Icon"} src={"/vector-circle-check.svg"} width={16} height={16} />
                         SEE YOU THERE!
                     </button>
                 ) : session.hasTicket ? (
@@ -142,7 +142,7 @@ const ParticipateButton = ({ session, isTallButton }: Props) => {
                             isTallButton ? 8 : 4
                         }px] px-[16px] rounded-[8px] cursor-default`}
                     >
-                        <NextImage src={"/vector-x.svg"} width={16} height={16} />
+                        <NextImage alt={"X Icon"} src={"/vector-x.svg"} width={16} height={16} />
                         SESSION FULL
                     </button>
                 ))}

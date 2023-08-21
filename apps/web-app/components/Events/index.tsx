@@ -66,7 +66,7 @@ const Events = ({ events }: Props) => {
                 </div>
                 <NextLink href="/full-program">
                     <div className="flex cursor-pointer items-center gap-2 bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] rounded-[8px]">
-                        <NextImage src={"/vector-calendar.svg"} width={16} height={16} />
+                        <NextImage alt={"Calendar Icon"} src={"/vector-calendar.svg"} width={16} height={16} />
                         FULL PROGRAM
                     </div>
                 </NextLink>
@@ -80,7 +80,13 @@ const Events = ({ events }: Props) => {
                             className={`flex overflow-hidden relative cursor-pointer flex-col gap-1 md:gap-2 justify-start md:justify-start p-5 md:p-[32px] h-[100px] md:h-[250px] rounded-[16px]`}
                         >
                             <div className="flex z-[1] absolute right-0 left-0 top-0 w-full h-full overflow-hidden">
-                                <NextImage src={event.bg_image_url} width={900} height={400} objectFit="cover" />
+                                <NextImage
+                                    alt={"Event Background Image"}
+                                    src={event.bg_image_url}
+                                    width={900}
+                                    height={400}
+                                    objectFit="cover"
+                                />
                             </div>
 
                             <h1 className="md:text-[24px] text-[16px] font-semibold capitalize z-[2]">{`${event.name}`}</h1>
@@ -101,7 +107,13 @@ const Events = ({ events }: Props) => {
                             className={`flex overflow-hidden relative cursor-pointer flex-col gap-1 md:gap-2 justify-start md:justify-start p-5 md:p-[32px] h-[100px] md:h-[250px] rounded-[16px]`}
                         >
                             <div className="flex z-[1] absolute right-0 left-0 top-0 w-full h-full overflow-hidden">
-                                <NextImage src={event.bg_image_url} width={900} height={400} objectFit="cover" />
+                                <NextImage
+                                    alt={"Event Background Image"}
+                                    src={event.bg_image_url}
+                                    width={900}
+                                    height={400}
+                                    objectFit="cover"
+                                />
                             </div>
 
                             <h1 className="md:text-[24px] text-[16px] font-semibold capitalize z-[2]">{`${event.name}`}</h1>

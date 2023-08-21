@@ -25,23 +25,23 @@ const Step2 = ({ setSteps, newSession, handleSubmit, isLoading }: Props) => {
                     <h1 className="text-[22px] font-[600]">{newSession.name}</h1>
                 </div>
                 <div className="flex items-center gap-2">
-                    <NextImage src="/vector-calendar.svg" width={20} height={20} />
+                    <NextImage alt={"Calendar Icon"} src="/vector-calendar.svg" width={20} height={20} />
                     <h1>{format(parse(newSession.startDate, "yyyy-MM-dd", new Date()), "EEEE, MMMM dd")}</h1>
                 </div>
                 <div className="flex items-center gap-2">
-                    <NextImage src="/vector-location.svg" width={20} height={20} />
+                    <NextImage alt={"Location Icon"} src="/vector-location.svg" width={20} height={20} />
                     <h1 className="text-[18px]">
                         {newSession.location === "Other" ? newSession.custom_location : newSession.location}
                     </h1>
                 </div>
                 <div className="flex items-center gap-2">
-                    <NextImage src="/vector-clock.svg" width={20} height={20} />
+                    <NextImage alt={"Clock Icon"} src="/vector-clock.svg" width={20} height={20} />
                     <h1>
                         {newSession.startTime}-{newSession.endTime}
                     </h1>
                 </div>
                 <div className="flex items-center gap-2">
-                    <NextImage src="/vector-clock.svg" width={20} height={20} />
+                    <NextImage alt={"Clock Icon"} src="/vector-clock.svg" width={20} height={20} />
                     <h1>{newSession.maxRsvp} RSVPs Allowed</h1>
                 </div>
                 <div className="flex items-center gap-2 mt-10">
