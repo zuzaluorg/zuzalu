@@ -55,8 +55,8 @@ module.exports = {
                 zulalu: {
                     primary: "#35655F",
                     secondary: "#52B5A4",
-                    lightBase: "#F8FFFE",
-                    darkBase: "#1C2928",
+                    lightBase: "#fbfaf8",
+                    darkBase: "#2C2A26",
                     gradient1: "#D2F8E8CC",
                     gradient2: "#FFF250CC",
                     yellow: "#FCD270"
@@ -64,10 +64,13 @@ module.exports = {
                 fora: {
                     primary: "#00FFEA",
                     secondary: "#FF8000",
-                    lightBase: "#FFF2E6",
-                    darkBase: "#29231D",
+                    magenta: "#FF0062",
+                    lightBase: "#fbfaf8",
+                    darkBase: "#2C2A26",
                     gray50: "#fbfaf8",
                     gray100: "#F8F6F2",
+                    gray800: "#433F39",
+                    gray900: "#2C2A26",
                 }
             },
             filter: {

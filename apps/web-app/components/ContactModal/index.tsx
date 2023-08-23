@@ -43,7 +43,7 @@ const ContactModal = ({ isOpen, closeModal }: Props) => {
                 </p>
                 <div className="mt-4">
                     <button
-                        className="bg-white border border-primary text-zulalu-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                        className="bg-white border border-primary text-fora-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                         onClick={() => closeModal(false)}
                     >
                         Close

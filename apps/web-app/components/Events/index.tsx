@@ -65,7 +65,7 @@ const Events = ({ events }: Props) => {
                     </h1>
                 </div>
                 <NextLink href="/full-program">
-                    <div className="flex cursor-pointer items-center gap-2 bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] rounded-[8px]">
+                    <div className="flex cursor-pointer items-center gap-2 bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] rounded-[8px]">
                         <NextImage alt={"Calendar Icon"} src={"/vector-calendar.svg"} width={16} height={16} />
                         FULL PROGRAM
                     </div>

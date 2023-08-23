@@ -14,24 +14,27 @@ import { SessionsDTO, EventsDTO } from "../../types"
 type Props = {
     sessions: SessionsDTO[]
     events: EventsDTO[]
+    sitedata: {
+        title: string
+    }
 }
 
-const HomeTemplate = ({ sessions, events }: Props) => {
+const HomeTemplate = ({ sessions, events, sitedata }: Props) => {
     const { userInfo } = useUserAuthenticationContext()
     const { requestSignedZuID } = useUserPassportContext()
 
     return (
-        <BaseTemplate>
+        <BaseTemplate sitedata={sitedata}>
             <Head>
-                <title>Zuzalu - home</title>
-                <meta property="og:title" content="Zuzalu" key="title" />
+                <title>{sitedata.title} - home</title>
+                <meta property="og:title" content={sitedata.title} key="title" />
             </Head>
 
             <div className="flex flex-col min-h-[100vh] p-5 gap-10">
                 {!userInfo ? (
                     <>
-                        <MainSection />
-                        <div className="flex flex-col items-center px-[32px] gap-[8px] bg-white rounded-[16px] z-10">
+                        <MainSection sitedata={sitedata} />
+                        <div className="flex flex-col items-center px-[32px] gap-[8px] bg-fora-gray200 rounded-[16px] z-10">
                             <div className="flex flex-col md:flex-row justify-center items-center p-[16px] gap-[24px]">
                                 <p className="font-[600] text-[18px] w-[310px] h-[50px] md:w-auto md:h-auto">
                                     Get access to tickets and build your schedule!
@@ -100,7 +103,7 @@ const HomeTemplate = ({ sessions, events }: Props) => {
                                     </h1>
                                 </div>
                                 <NextLink href="/full-program">
-                                    <div className="flex cursor-pointer items-center gap-2 bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] rounded-[8px]">
+                                    <div className="flex cursor-pointer items-center gap-2 bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] rounded-[8px]">
                                         <NextImage
                                             alt={"Calendar Icon"}
                                             src={"/vector-calendar.svg"}
@@ -113,7 +116,6 @@ const HomeTemplate = ({ sessions, events }: Props) => {
                             </div>
                             <CalendarPageSessions sessions={sessions} />
                         </div>
-                        /
                     </>
                 )}
             </div>

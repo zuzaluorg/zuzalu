@@ -157,13 +157,13 @@ const CalendarPage = ({ sessions, events }: Props) => {
                     </div>
                     <div className="flex flex-row gap-[8px] justify-between items-center">
                         <button
-                            className="flex md:hidden bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] rounded-[8px]"
+                            className="flex md:hidden bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] rounded-[8px]"
                             onClick={() => setOpenContactModal(true)}
                         >
                             CONTACT
                         </button>
                         <button
-                            className="hidden md:flex bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] rounded-[8px]"
+                            className="hidden md:flex bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] rounded-[8px]"
                             onClick={() => setOpenContactModal(true)}
                         >
                             CONTACT ORGANIZERS
@@ -228,14 +228,14 @@ const CalendarPage = ({ sessions, events }: Props) => {
                             <div className="flex flex-col relative w-full md:w-[150px]" ref={localtionRef}>
                                 <button
                                     onClick={() => setOpenLocationFilter(!openLocationFilter)}
-                                    className="flex justify-between uppercase bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
+                                    className="flex justify-between uppercase bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
                                 >
                                     <p>Location</p>
                                     <NextImage alt={"Arrow Down Icon"} src={"/arrow-down.svg"} width={8} height={4} />
                                 </button>
 
                                 {openLocationFilter && (
-                                    <div className="flex z-[10] flex-col gap-3 bg-white border w-full py-[8px] px-[16px] border-primary absolute top-[45px] text-zulalu-primary rounded-[8px]">
+                                    <div className="flex z-[10] flex-col gap-3 bg-white border w-full py-[8px] px-[16px] border-primary absolute top-[45px] text-fora-primary rounded-[8px]">
                                         {locationsOptions.map((item, index) => (
                                             <label key={index} className="flex w-full items-center gap-2 capitalize">
                                                 <input
@@ -257,7 +257,7 @@ const CalendarPage = ({ sessions, events }: Props) => {
                                     setFilteredSessions(sessions)
                                     setDatePickerDescription("FULL PROGRAM")
                                 }}
-                                className="bg-white border w-full md:w-auto border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-between md:justify-center items-center"
+                                className="bg-white border w-full md:w-auto border-primary text-fora-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-between md:justify-center items-center"
                             >
                                 <p>CLEAR FILTER</p>
                                 {/* <NextImage src={"/arrow-down.svg"} width={8} height={4} /> */}
@@ -266,7 +266,7 @@ const CalendarPage = ({ sessions, events }: Props) => {
                             <div className="flex flex-col w-auto min-w-[200px]" ref={datePickerWrapperRef}>
                                 <button
                                     onClick={toggleDatePicker}
-                                    className="flex justify-between uppercase bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
+                                    className="flex justify-between uppercase bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
                                 >
                                     <p>{datePickerDescription}</p>
                                     <NextImage alt={"Arrow down icon"} src="/arrow-down.svg" width={8} height={4} />

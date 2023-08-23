@@ -634,7 +634,7 @@ const Step1 = ({ events, newSession, setNewSession, setSteps, sessions, checkIfS
             <div className="w-full flex flex-col md:flex-row gap-5 justify-center items-center my-5">
                 <button
                     type="button"
-                    className="w-full flex flex-row border-zulalu-primary border font-[600] justify-center items-center py-[8px] px-[16px] gap-[8px] bg-white rounded-[8px] text-black text-[16px]"
+                    className="w-full flex flex-row border-fora-primary border font-[600] justify-center items-center py-[8px] px-[16px] gap-[8px] bg-white rounded-[8px] text-black text-[16px]"
                     onClick={() => setSteps(1)}
                 >
                     <IoMdArrowBack size={20} />

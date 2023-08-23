@@ -71,7 +71,7 @@ const Home = ({ sessions, events }: Props) => {
         checkAndUpdateVersion()
     }, [])
 
-    return <HomeTemplate sessions={sessions} events={events} />
+    return <HomeTemplate sessions={sessions} events={events} sitedata={{ title: "Fora" }} />
 }
 
 export default Home

@@ -2,11 +2,11 @@ import { ToastContainer } from "react-toastify"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 
-const BaseTemplate = ({ children }: any) => (
+const BaseTemplate = ({ children, sitedata }: any) => (
     <div className="flex flex-col min-h-screen bg-fora-gray100">
         <div className="z-20">
             <header>
-                <Header />
+                <Header sitedata={sitedata} />
             </header>
         </div>
         <main className="flex-grow">{children}</main>{" "}

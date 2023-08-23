@@ -197,16 +197,16 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                                 }
                                 target="_blank"
                             >
-                                <div className="w-full md:w-auto justify-center text-center md:w-auto bg-white border border-primary py-[8px] px-[5px] md:px-[15px] text-zulalu-primary font-[600] rounded-[8px] text-[12px] md:text-[16px]">
+                                <div className="w-full md:w-auto justify-center text-center md:w-auto bg-white border border-primary py-[8px] px-[5px] md:px-[15px] text-fora-primary font-[600] rounded-[8px] text-[12px] md:text-[16px]">
                                     <p>APPLY NOW</p>
                                 </div>
                             </a>
                         )}
-                        <button className="w-full md:w-auto justify-center text-center bg-white border border-primary py-[8px] px-[5px] md:px-[15px] text-zulalu-primary font-[600] rounded-[8px] text-[12px] md:text-[16px]">
+                        <button className="w-full md:w-auto justify-center text-center bg-white border border-primary py-[8px] px-[5px] md:px-[15px] text-fora-primary font-[600] rounded-[8px] text-[12px] md:text-[16px]">
                             CONTACT ORGANIZERS
                         </button>
                         <a href={event.publicUrl} target="_blank">
-                            <button className="w-full md:w-auto justify-center text-center flex gap-1 items-center bg-zulalu-primary text-white py-[8px] px-[5px] md:px-[15px] font-[600] rounded-[8px] text-[12px] md:text-[16px]">
+                            <button className="w-full md:w-auto justify-center text-center flex gap-1 items-center bg-fora-primary text-white py-[8px] px-[5px] md:px-[15px] font-[600] rounded-[8px] text-[12px] md:text-[16px]">
                                 <NextImage alt={"Ticket Icon"} src={"/ticket.svg"} width={13} height={12} />
                                 BUY TICKET
                             </button>
@@ -230,7 +230,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                         <div className="flex flex-col w-full gap-4">
                             <div className="flex gap-1 items-center justify-start font-[600]">
                                 <NextImage src={"/vector-calendar.svg"} alt="calendar" width={15} height={15} />
-                                <h1 className="text-zulalu-secondary">{formatDates(event.startDate, event.endDate)}</h1>
+                                <h1 className="text-fora-secondary">{formatDates(event.startDate, event.endDate)}</h1>
                             </div>
                             <h1>{event.info}</h1>
                         </div>
@@ -284,14 +284,14 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                             <div className="flex flex-col relative w-full md:w-[150px]" ref={localtionRef}>
                                 <button
                                     onClick={() => setOpenLocationFilter(!openLocationFilter)}
-                                    className="flex justify-between uppercase bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
+                                    className="flex justify-between uppercase bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
                                 >
                                     <p>Location</p>
                                     <NextImage alt={"Arrow down Icon"} src={"/arrow-down.svg"} width={8} height={4} />
                                 </button>
 
                                 {openLocationFilter && (
-                                    <div className="flex z-[10] flex-col gap-3 bg-white border w-full py-[8px] px-[16px] border-primary absolute top-[45px] text-zulalu-primary rounded-[8px]">
+                                    <div className="flex z-[10] flex-col gap-3 bg-white border w-full py-[8px] px-[16px] border-primary absolute top-[45px] text-fora-primary rounded-[8px]">
                                         {locationsOptions.map((item, index) => (
                                             <label key={index} className="flex w-full items-center gap-2 capitalize">
                                                 <input
@@ -313,7 +313,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                                     setFilteredSessions(sessions)
                                     setDatePickerDescription("FULL PROGRAM")
                                 }}
-                                className="bg-white border w-full md:w-auto border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-between md:justify-center items-center"
+                                className="bg-white border w-full md:w-auto border-primary text-fora-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-between md:justify-center items-center"
                             >
                                 <p>CLEAR FILTER</p>
                             </button>
@@ -322,7 +322,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                             <div className="flex flex-col w-auto min-w-[200px]" ref={datePickerWrapperRef}>
                                 <button
                                     onClick={toggleDatePicker}
-                                    className="flex justify-between uppercase bg-white border border-primary text-zulalu-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
+                                    className="flex justify-between uppercase bg-white border border-primary text-fora-primary font-[600] py-[8px] px-[16px] gap-[8px] text-[16px] rounded-[8px] flex flex-row justify-center items-center"
                                 >
                                     <p>{datePickerDescription}</p>
                                     <NextImage alt={"Arrow Down Icon"} src="/arrow-down.svg" width={8} height={4} />

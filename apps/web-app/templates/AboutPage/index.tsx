@@ -35,12 +35,12 @@ const AboutPage = () => (
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <span className="text-zulalu-primary underline">Check out our notion</span>
+                            <span className="text-fora-primary underline">Check out our notion</span>
                         </a>
                         <h1>
                             and
                             <a href="https://t.me/+iXBJiYc8PkQ3NWFl" target="_blank" rel="noopener noreferrer">
-                                <span className="text-zulalu-primary underline">
+                                <span className="text-fora-primary underline">
                                     {" "}
                                     our announcement telegram channel.
                                 </span>

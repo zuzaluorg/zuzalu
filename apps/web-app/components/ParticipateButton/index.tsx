@@ -101,7 +101,7 @@ const ParticipateButton = ({ session, isTallButton }: Props) => {
             {userInfo &&
                 (session.participants.length > 0 ? (
                     <button
-                        className={`flex gap-2 md:w-auto w-full justify-center items-center bg-white border border-primary text-zulalu-primary font-[600] py-[${
+                        className={`flex gap-2 md:w-auto w-full justify-center items-center bg-white border border-primary text-fora-primary font-[600] py-[${
                             isTallButton ? 8 : 4
                         }px] px-[16px] rounded-[8px] cursor-default`}
                     >
@@ -138,7 +138,7 @@ const ParticipateButton = ({ session, isTallButton }: Props) => {
                 ) : (
                     <button
                         disabled={true}
-                        className={`flex gap-2 md:w-auto w-full justify-center items-center bg-white border border-primary text-zulalu-primary font-[600] py-[${
+                        className={`flex gap-2 md:w-auto w-full justify-center items-center bg-white border border-primary text-fora-primary font-[600] py-[${
                             isTallButton ? 8 : 4
                         }px] px-[16px] rounded-[8px] cursor-default`}
                     >

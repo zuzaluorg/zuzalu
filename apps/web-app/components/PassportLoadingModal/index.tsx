@@ -32,7 +32,7 @@ const PassportLoadingModal = ({ loadingPassport, errorPassport }: Props) => {
     if (errorPassport) {
         return (
             <div className="fixed inset-0 z-10 flex items-center justify-center bg-gray-500 bg-opacity-75 z-[30]">
-                <div className="flex w-[500px] h-[400px] flex-col items-center justify-center bg-zulalu-primary text-white rounded-[16px] p-6">
+                <div className="flex w-[500px] h-[400px] flex-col items-center justify-center bg-fora-primary text-white rounded-[16px] p-6">
                     <div className="flex w-full align-center justify-center">
                         <BiError size={50} className="text-red-500" />
                     </div>
@@ -42,7 +42,7 @@ const PassportLoadingModal = ({ loadingPassport, errorPassport }: Props) => {
                         TRY AGAIN LATER
                     </div>
                     <button
-                        className="bg-zulalu-secondary p-3 w-[200px] rounded-[8px] font-[600]"
+                        className="bg-fora-secondary p-3 w-[200px] rounded-[8px] font-[600]"
                         onClick={() => {
                             router.push("/").then(() => {
                                 router.reload()
@@ -58,10 +58,10 @@ const PassportLoadingModal = ({ loadingPassport, errorPassport }: Props) => {
 
     return (
         <div className="fixed inset-0 z-10 flex items-center justify-center bg-gray-500 bg-opacity-75 z-[30]">
-            <div className="flex w-[500px] h-[400px] flex-col align-center justify-center bg-zulalu-primary text-white rounded-[16px] p-6">
+            <div className="flex w-[500px] h-[400px] flex-col align-center justify-center bg-fora-primary text-white rounded-[16px] p-6">
                 <div className="flex w-full align-center justify-center">
                     {loadingPassport.step === 4 ? (
-                        <AiOutlineCheckCircle size={40} className="text-zulalu-secondary" />
+                        <AiOutlineCheckCircle size={40} className="text-fora-secondary" />
                     ) : (
                         <Loading />
                     )}
