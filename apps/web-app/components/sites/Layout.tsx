@@ -37,7 +37,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
     return (
         <div>
             <Head>
-                <title>{meta?.title}</title>
+                <title>{meta?.header}</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="shortcut icon" type="image/x-icon" href={meta?.logo} />
                 <link rel="apple-touch-icon" sizes="180x180" href={meta?.logo} />

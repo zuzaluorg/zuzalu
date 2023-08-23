@@ -2,13 +2,15 @@ import { useEffect, useState } from "react"
 import NextImage from "next/image"
 import NextLink from "next/link"
 import { useRouter } from "next/router"
-import { FiArrowUpRight } from "react-icons/fi"
+import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi"
 
 import { useUserAuthenticationContext } from "../../context/UserAuthenticationContext"
 import { useUserPassportContext } from "../../context/UserPassportContext"
 import PassportLoadingModal from "../PassportLoadingModal"
+import { sites } from "../../data/sites"
+import ConnectPassportButton from "../ConnectPassportButton"
 
-const Header = ({ sitedata }) => {
+const Header = ({ sitedata }: { sitedata: (typeof sites)["vitalia"] }) => {
     const { userInfo } = useUserAuthenticationContext()
 
     const { requestSignedZuID, loadingPassport, errorPassport } = useUserPassportContext()
@@ -31,41 +33,20 @@ const Header = ({ sitedata }) => {
                     </div>
                 </NextLink> */}
                 <NextLink href={"/"}>
-                    <div className="flex cursor-pointer gap-2 items-center justify-center ">
-                        <div className="h-14 w-14">
-                            <img src={sitedata.logo} alt="Zuzalu City Logo" height={50} />
+                    <div className="flex cursor-pointer items-center justify-center h-14 w-14 lg:h-16 lg:w-16">
+                        <div className="p-2 lg:p-0">
+                            <img src={sitedata.logo} alt={`${sitedata.name} logo`} />
                         </div>
                     </div>
                 </NextLink>
 
                 {userInfo && (
                     <div className="flex gap-2 text-fora-primary justify-center items-center text-[18px] text-center self-center">
-                        <div className="w-[8px] h-[8px] bg-fora-primary rounded-full" />
+                        <div className="w-[8px] h-[8px] bg-fora-gray900 rounded-full" />
                         <h1 className="text-fora-primary text-[18px] font-[400]">Passport Connected</h1>
                     </div>
                 )}
-                {!userInfo && (
-                    <div className="flex flex-row -center">
-                        <button
-                            className={`flex md:hidden bg-fora-primary uppercase font-bold text-fora-gray900 py-[8px] px-[16px] rounded-[8px]`}
-                            onClick={requestSignedZuID}
-                        >
-                            Connect Passport
-                        </button>
-                    </div>
-                )}
-                <div className="md:hidden">
-                    <button
-                        className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
-                        onClick={() => setNavbar(!navbar)}
-                    >
-                        {navbar ? (
-                            <NextImage alt={"Close icon"} src={"/close.png"} width={32} height={32} />
-                        ) : (
-                            <NextImage alt={"Menu icon"} src={"/hamburger.png"} width={22} height={18} />
-                        )}
-                    </button>
-                </div>
+
                 <ul className="hidden md:flex flex-row gap-5 md:ml-auto items-center text-white">
                     <NextLink href={"/about"}>
                         <li
@@ -134,17 +115,21 @@ const Header = ({ sitedata }) => {
                         >
                             <NextLink href="/myprofile">My Profile</NextLink>
                         </li>
-                    ) : (
-                        <li>
-                            <button
-                                className="bg-fora-primary uppercase font-bold text-fora-gray900 py-[8px] px-[16px] tracking-wide rounded-[8px]"
-                                onClick={requestSignedZuID}
-                            >
-                                Connect Passport
-                            </button>
-                        </li>
-                    )}
+                    ) : null}
                 </ul>
+                <div>
+                    <ConnectPassportButton>
+                        Connect Passport
+                        </ConnectPassportButton>
+                </div>
+                <div className="md:hidden">
+                    <button
+                        className="p-3 text-fora-gray800 rounded-md outline-none focus:border-gray-400 focus:border "
+                        onClick={() => setNavbar(!navbar)}
+                    >
+                        {navbar ? <FiX fontSize={32} /> : <FiMenu fontSize={32} />}
+                    </button>
+                </div>
             </div>
             {/* Add the responsive dropdown menu */}
             <div

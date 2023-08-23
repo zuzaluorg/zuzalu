@@ -7,6 +7,9 @@ import { useEffect } from "react"
 
 import { EventsDTO, SessionsDTO } from "../types"
 import HomeTemplate from "../templates/Home"
+import Layout from "../components/sites/Layout"
+import { sites } from "../data/sites"
+
 
 type Props = {
     sessions: SessionsDTO[]
@@ -71,7 +74,11 @@ const Home = ({ sessions, events }: Props) => {
         checkAndUpdateVersion()
     }, [])
 
-    return <HomeTemplate sessions={sessions} events={events} sitedata={{ title: "Fora" }} />
+    return (
+        <Layout meta={sites.vitalia} subdomain={sites.vitalia.subdomain}>
+            <HomeTemplate sessions={[]} events={[]} sitedata={sites.vitalia} />
+        </Layout>
+    )
 }
 
 export default Home
