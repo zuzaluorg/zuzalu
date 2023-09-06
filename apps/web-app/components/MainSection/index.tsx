@@ -1,5 +1,5 @@
 const MainSection = () => (
-    <div className="flex flex-col bg-[#ffffff] rounded-[16px] bg-cover bg-top md:bg-right bg-no-repeat bg-[url('/50.png')] py-10 px-[20px] lg:py-20">
+    <div className="flex flex-col bg-[#ffffff] rounded-[20px] bg-cover bg-top md:bg-right bg-no-repeat bg-[url('/50.png')] py-8 px-5 md:px-9 md:py-18 lg:p-20">
         <div>
             <div className="flex lg:w-3/6 w-full flex-col gap-5">
                 <h1 className="font-semibold text-[44px] md:text-[58px]">
@@ -12,8 +12,8 @@ const MainSection = () => (
                     decentralized science, and culture unite in the heart of Istanbul to co-work, break down siloes, and
                     have fun.
                 </h1>
-                <div className="flex flex-row -center ">
-                    <button className="flex w-full md:w-fit items-center justify-center bg-zulalu-primary text-white py-[8px] px-[18px] rounded-[8px] mt-5">
+                <div className="flex">
+                    <button className="flex w-full md:w-fit items-center justify-center bg-zulalu-primary text-white py-[14px] px-[30px] rounded-[10px] mt-5 text-[18px] font-medium">
                         Apply for ZuConnect
                     </button>
                 </div>
