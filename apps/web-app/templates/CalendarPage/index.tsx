@@ -183,7 +183,7 @@ const CalendarPage = ({ sessions, events }: Props) => {
                 )}
                 <div className="flex md:hidden h-full w-full items-center justify-center rounded-[8px]">
                     <NextImage
-                        src="https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/Tag%20(1).png"
+                        src={"url(/50.png)"}
                         objectFit="fill"
                         alt="event-image"
                         style={{ borderRadius: "18px" }}
@@ -193,7 +193,7 @@ const CalendarPage = ({ sessions, events }: Props) => {
                 </div>
                 <div className="hidden md:flex h-full w-full items-center justify-center rounded-[8px]">
                     <NextImage
-                        src="https://polcxtixgqxfuvrqgthn.supabase.co/storage/v1/object/public/zulalu-images/Tag.png"
+                        src={"url(/50.png)"}
                         objectFit="fill"
                         alt="event-image"
                         style={{ borderRadius: "18px" }}

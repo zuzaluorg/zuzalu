@@ -55,7 +55,7 @@ const HomeTemplate = ({ sessions, events }: Props) => {
                                 </NextLink>
                             </div>
                         </div>
-                        <Events events={events} />
+                        {/* <Events events={events} /> */}
                     </>
                 ) : (
                     <>
