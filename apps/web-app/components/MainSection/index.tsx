@@ -1,25 +1,24 @@
 const MainSection = () => (
-    <div className="flex flex-col bg-[#EEEEF0]">
-        <div className="overflow-hidden w-full h-full flex justify-between lg:flex-row flex-col py-5  px-[28px] md:px-[48px] bg-white rounded-[16px] gap-[100px] lg:gap-10">
-            <div className="flex md:w-3/6 w-full flex-col gap-5">
-                <h1 className="font-semibold text-[32px] md:text-[52px] md:mb-10">
-                    Zuzalu is a first-of-its-kind pop-up city community in{" "}
-                    <span className="relative z-10 inline-block px-2">
-                        <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-200"></span>
-                        <span className="relative z-[10]">Montenegro.</span>
-                    </span>{" "}
+    <div className="flex flex-col bg-[#ffffff] rounded-[20px] bg-cover bg-top md:bg-right bg-no-repeat bg-[url('/50.png')] py-8 px-5 md:px-9 md:py-18 lg:p-20">
+        <div>
+            <div className="flex lg:w-3/6 w-full flex-col gap-5">
+                <h1 className="font-semibold text-[44px] md:text-[58px]">
+                    ZuConnect in
+                    <br />
+                    <span className="font-extrabold">Instanbul</span>
                 </h1>
-                <h1 className="font-normal text-[16px] md:text-[18px] w-[auto] md:w-[600px] leading-[25px] md:leading-[25px]">
-                    Join 200 core residents brought together by a shared desire to learn, create, live longer and
-                    healthier lives, and build self-sustaining communities.
+                <h1 className="font-medium text-[20px] md:text-[20px] w-[auto] md:leading-8">
+                    Join us for a two-week popup village where the leading innovators in crypto, AI, governance,
+                    decentralized science, and culture unite in the heart of Istanbul to co-work, break down siloes, and
+                    have fun.
                 </h1>
-            </div>
-            <div className="p-5 relative w-full lg:w-3/6 h-[500px] w-full flex justify-center items-center">
-                <div className="absolute z-[10]  bottom-0 border border-black w-[550px] h-[300px] bg-eventbg2 filter blur-[150px] z-[1]" />
-                <div className="absolute z-[9]  border border-black w-[500px] h-[379px] bg-eventbg1 filter blur-[150px] z-[1]" />
-
-                <div className="top-0 absolute z-[11] w-full h-full bg-contain bg-center bg-no-repeat bg-[url('/vector.png')]" />
-                <div className="top-0 absolute z-[12] w-full h-full bg-contain bg-center bg-no-repeat bg-[url('/49.png')]" />
+                <div className="flex">
+                    <a href="https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8/book" target="_blank">
+                        <button className="flex w-full md:w-fit items-center justify-center bg-zulalu-primary text-white py-[14px] px-[30px] rounded-[10px] mt-5 text-[18px] font-medium">
+                            Apply for ZuConnect
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

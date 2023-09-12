@@ -27,31 +27,35 @@ const HomeTemplate = ({ sessions, events }: Props) => {
                 <meta property="og:title" content="Zuzalu" key="title" />
             </Head>
 
-            <div className="flex flex-col min-h-[100vh] bg-[#EEEEF0] p-5 gap-10">
+            <div className="flex flex-col max-h-fit bg-[#EEEEF0] pb-[25px] pt-[15px] md:pb-[50px] md:pt-[25px] px-5 gap-10">
                 {!userInfo ? (
                     <>
                         <MainSection />
-                        <div className="flex flex-col items-center px-[32px] gap-[8px] bg-white rounded-[16px]">
-                            <div className="flex flex-col md:flex-row justify-center items-center p-[16px] gap-[24px]">
-                                <p className="font-[600] text-[18px] w-[310px] h-[50px] md:w-auto md:h-auto">
-                                    Get access to tickets and build your schedule!
-                                </p>
+                        <div className="flex flex-col items-center justify-between w-full p-[16px]  md:px-[20px] md:py-[16px] gap-[8px] bg-white rounded-[16px] lg:flex-row">
+                            <p className="font-semibold text-[16px] md:text-[20px] w-fit">
+                                View other Zuzalu schedules & add your own schedules
+                            </p>
+                            <div className="flex flex-col lg:flex-row justify-end w-full lg:w-7/12">
                                 <button
-                                    className="flex flex-row justify-center items-center py-[8px] w-[310px] md:w-[416px] h-[40px] px-[16px] gap-[8px] bg-[#1C2928] rounded-[8px]"
+                                    className="flex flex-row justify-center items-center my-[10px] py-[8px] w-full lg:w-5/12 bg-[#1C2928] rounded-[8px] lg:my-0 lg:mr-[20px]"
                                     onClick={requestSignedZuID}
                                 >
-                                    <NextImage src={"/passport-vector.svg"} width={16} height={16} />
-                                    <p className="font-[600] text-[16px] text-[#F8FFFE]">Connect Passport</p>
+                                    {/* <NextImage src={"/passport-vector.svg"} width={16} height={16} /> */}
+                                    <p className="font-[500] text-[16px] lg:text-[18px] text-[white]">
+                                        Connect Passport
+                                    </p>
                                 </button>
                                 <NextLink href="/full-program">
-                                    <button className="flex flex-row justify-center items-center py-[8px] px-[16px] w-[310px] md:w-[416px] h-[40px] gap-[8px] bg-[#1C2928] rounded-[8px]">
-                                        <NextImage src={"/calendar-vector.svg"} width={16} height={16} />
-                                        <p className="font-[600] text-[16px] text-[#F8FFFE]">Full Program</p>
+                                    <button className="flex flex-row justify-center items-center py-[8px] w-full lg:w-5/12 bg-[#1C2928] rounded-[8px]">
+                                        {/* <NextImage src={"/calendar-vector.svg"} width={16} height={16} /> */}
+                                        <p className="font-[500] text-[16px] lg:text-[18px] text-[white]">
+                                            View Schedules
+                                        </p>
                                     </button>
                                 </NextLink>
                             </div>
                         </div>
-                        <Events events={events} />
+                        {/* <Events events={events} /> */}
                     </>
                 ) : (
                     <>
