@@ -183,7 +183,7 @@ const CalendarPage = ({ sessions, events }: Props) => {
                 )}
                 <div className="flex md:hidden h-full w-full items-center justify-center rounded-[8px]">
                     <NextImage
-                        src={"url(/50.png)"}
+                        src={"/50.png"}
                         objectFit="fill"
                         alt="event-image"
                         style={{ borderRadius: "18px" }}
@@ -193,7 +193,7 @@ const CalendarPage = ({ sessions, events }: Props) => {
                 </div>
                 <div className="hidden md:flex h-full w-full items-center justify-center rounded-[8px]">
                     <NextImage
-                        src={"url(/50.png)"}
+                        src={"/50.png"}
                         objectFit="fill"
                         alt="event-image"
                         style={{ borderRadius: "18px" }}
