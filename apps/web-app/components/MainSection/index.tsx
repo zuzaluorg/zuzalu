@@ -5,7 +5,7 @@ const MainSection = () => (
                 <h1 className="font-semibold text-[44px] md:text-[58px]">
                     ZuConnect in
                     <br />
-                    <span className="font-extrabold">Instanbul</span>
+                    <span className="font-extrabold">Istanbul</span>
                 </h1>
                 <h1 className="font-medium text-[20px] md:text-[20px] w-[auto] md:leading-8">
                     Join us for a two-week popup village where the leading innovators in crypto, AI, governance,
