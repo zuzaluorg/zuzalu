@@ -8,9 +8,17 @@ const MainSection = () => (
                     <span className="font-extrabold">Instanbul</span>
                 </h1>
                 <h1 className="font-medium text-[20px] md:text-[20px] w-[auto] md:leading-8">
-                    Join us for a two-week popup village where the leading innovators in crypto, AI, governance,
-                    decentralized science, and culture unite in the heart of Istanbul to co-work, break down siloes, and
-                    have fun.
+                    Join us for a{" "}
+                    <span>
+                        <a
+                            href="https://app.skiff.com/docs/686afeda-6dd6-4e45-bd9c-025da5ab7af2#%2FAPhdwcKl0ybzpGeElvYgLL3%2BIXTf%2B8vm5OMl%2Bs%2F1P0%3D"
+                            target="_blank"
+                        >
+                            two-week popup village
+                        </a>
+                    </span>{" "}
+                    where the leading innovators in crypto, AI, governance, decentralized science, and culture unite in
+                    the heart of Istanbul to co-work, break down siloes, and have fun.
                 </h1>
                 <div className="flex">
                     <a href="https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8/book" target="_blank">
