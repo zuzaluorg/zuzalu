@@ -98,7 +98,7 @@ const HomeTemplate = ({ sessions, events }: Props) => {
                                     </div>
                                 </NextLink>
                             </div>
-                            <CalendarPageSessions sessions={sessions} />
+                            {/* <CalendarPageSessions sessions={sessions} /> */}
                         </div>
                         /
                     </>
