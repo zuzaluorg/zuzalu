@@ -27,8 +27,8 @@ const EventsPage = ({ events }: Props) => (
                     <div className="absolute z-[10]  bottom-0 border border-black w-[550px] h-[300px] bg-eventbg2 filter blur-[150px] z-[1]" />
                     <div className="absolute z-[9]  border border-black w-[500px] h-[379px] bg-eventbg1 filter blur-[150px] z-[1]" />
 
-                    <div className="top-0 absolute z-[20] w-full h-full bg-contain bg-center bg-no-repeat bg-[url('/vector.png')]" />
-                    <div className="top-0 absolute z-[21] w-full h-full bg-contain bg-center bg-no-repeat bg-[url('/49.png')]" />
+                    {/* <div className="top-0 absolute z-[20] w-full h-full bg-contain bg-center bg-no-repeat bg-[url('/vector.png')]" /> */}
+                    <div className="top-0 absolute z-[21] w-full h-full bg-contain bg-center bg-no-repeat bg-[url('/50.png')]" />
                 </div>
             </div>
             <Events events={events} />
