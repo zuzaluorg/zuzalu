@@ -39,7 +39,7 @@ const AboutPage = () => (
                         </a>
                         <h1>
                             and
-                            <a href="https://t.me/+iXBJiYc8PkQ3NWFl" target="_blank" rel="noopener noreferrer">
+                            <a href="https://t.me/+HraKlV2MQ3w5MzM1" target="_blank" rel="noopener noreferrer">
                                 <span className="text-zulalu-primary underline">
                                     {" "}
                                     our announcement telegram channel.
