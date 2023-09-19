@@ -70,7 +70,7 @@ const Header = () => {
                     </button>
                 </div>
                 <ul className="hidden md:flex flex-row gap-5 md:ml-auto items-center text-white">
-                    <NextLink href={"/about"}>
+                    {/* <NextLink href={"/about"}>
                         <li
                             className={`cursor-pointer text-[#F8FFFE] text-[18px] ${
                                 router.asPath === "/about" ? "font-[700]" : "font-[400]"
@@ -78,7 +78,7 @@ const Header = () => {
                         >
                             About
                         </li>
-                    </NextLink>
+                    </NextLink> */}
                     <NextLink href={"/full-program"}>
                         <li
                             className={`cursor-pointer text-[#F8FFFE] text-[18px] ${
@@ -88,15 +88,30 @@ const Header = () => {
                             Schedule
                         </li>
                     </NextLink>
-                    <NextLink href={"/faq"}>
+                    <a href={"https://zuzalu.streameth.org/"} target="_blank">
                         <li
-                            className={`cursor-pointer text-[#F8FFFE] text-[18px] ${
+                            className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
                                 router.asPath === "/faq" ? "font-[700]" : "font-[400]"
                             }`}
                         >
-                            FAQ
+                            Newsletter
                         </li>
-                    </NextLink>
+                    </a>
+
+                    <a
+                        href={
+                            "https://zuzalu.notion.site/zuzalu/3e893df2a248496bb30720fc1518c3c6?v=b0bc5b586a574272928d9a1fe0ded088"
+                        }
+                        target="_blank"
+                    >
+                        <li
+                            className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
+                                router.asPath === "/faq" ? "font-[700]" : "font-[400]"
+                            }`}
+                        >
+                            Zuzalu Playbook
+                        </li>
+                    </a>
                     <a href={"https://zupass.org/"} target="_blank">
                         <li
                             className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
@@ -106,13 +121,13 @@ const Header = () => {
                             Zuzalu Passport
                         </li>
                     </a>
-                    <a href={"https://zuzalu.streameth.org/"} target="_blank">
+                    <a href={"https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8/book"} target="_blank">
                         <li
                             className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
                                 router.asPath === "/faq" ? "font-[700]" : "font-[400]"
                             }`}
                         >
-                            Livestreams
+                            Apply Now
                         </li>
                     </a>
                     <NextLink href={"/zapps"}>
