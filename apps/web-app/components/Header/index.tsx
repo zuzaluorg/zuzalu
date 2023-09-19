@@ -88,7 +88,7 @@ const Header = () => {
                             Schedule
                         </li>
                     </NextLink>
-                    <a href={"https://zuzalu.streameth.org/"} target="_blank">
+                    {/* <a href={"https://zuzalu.streameth.org/"} target="_blank">
                         <li
                             className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
                                 router.asPath === "/faq" ? "font-[700]" : "font-[400]"
@@ -96,9 +96,9 @@ const Header = () => {
                         >
                             Newsletter
                         </li>
-                    </a>
+                    </a> */}
 
-                    <a
+                    {/* <a
                         href={
                             "https://zuzalu.notion.site/zuzalu/3e893df2a248496bb30720fc1518c3c6?v=b0bc5b586a574272928d9a1fe0ded088"
                         }
@@ -111,7 +111,7 @@ const Header = () => {
                         >
                             Zuzalu Playbook
                         </li>
-                    </a>
+                    </a> */}
                     <a href={"https://zupass.org/"} target="_blank">
                         <li
                             className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
