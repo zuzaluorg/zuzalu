@@ -126,15 +126,7 @@ const Header = () => {
                             Zuzalu Passport
                         </li>
                     </a>
-                    <a href={"https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8/book"} target="_blank">
-                        <li
-                            className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
-                                router.asPath === "/faq" ? "font-[700]" : "font-[400]"
-                            }`}
-                        >
-                            Apply Now
-                        </li>
-                    </a>
+
                     <NextLink href={"/zapps"}>
                         <li
                             className={`cursor-pointer text-[#F8FFFE] text-[18px] ${
