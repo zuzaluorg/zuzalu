@@ -9,7 +9,7 @@ const MainSection = () => (
                 </h1>
                 <h1 className="font-medium text-[20px] md:text-[20px] w-[auto] md:leading-8">
                     Join us for a{" "}
-                    <span style={{ fontWeight: "bold" }}>
+                    <span style={{ fontWeight: "bold", textDecoration: "underline" }}>
                         <a
                             href="https://app.skiff.com/docs/686afeda-6dd6-4e45-bd9c-025da5ab7af2#%2FAPhdwcKl0ybzpGeElvYgLL3%2BIXTf%2B8vm5OMl%2Bs%2F1P0%3D"
                             target="_blank"
