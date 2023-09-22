@@ -7,7 +7,6 @@ import {
 import axios from "axios"
 import { EdDSATicketPCDPackage } from "@pcd/eddsa-ticket-pcd"
 import { EdDSAPCDPackage } from "@pcd/eddsa-pcd"
-import { ParticipantsDTO } from "../types"
 
 type UserPassportContextData = {
     requestSignedZuID: () => void
@@ -33,7 +32,7 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
     })
     const [errorPassport, setErrorPassport] = useState(false)
 
-    const PASSPORT_URL: string = process.env.PASSPORT_URL as string;
+    const PASSPORT_URL: string = process.env.NEXT_PUBLIC_PASSPORT_URL as string;
 
     function requestSignedZuID() {
         setLoadingPassport({ step: 1, text: "Waiting to prove passport..." })
@@ -128,6 +127,14 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
             {children}
         </UserPassportContext.Provider>
     )
+}
+
+export function getServerSideProps() {
+    return {
+        props: {
+            PASSPORT_URL: process.env.PASSPORT_URL as string
+        }
+    }
 }
 
 export const useUserPassportContext = () => useContext(UserPassportContext)
