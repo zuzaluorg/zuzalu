@@ -1,12 +1,13 @@
 import { useRouter } from "next/router"
 import { createContext, ReactNode, useState, useContext, useEffect } from "react"
 import {
-    openSignedZuzaluUUIDPopup,
-    useFetchParticipant,
-    usePassportPopupMessages,
-    useSemaphoreSignatureProof
+    getWithoutProvingUrl,
+    User
 } from "@pcd/passport-interface"
 import axios from "axios"
+import { EdDSATicketPCDPackage } from "@pcd/eddsa-ticket-pcd"
+import { EdDSAPCDPackage } from "@pcd/eddsa-pcd"
+import { ParticipantsDTO } from "../types"
 
 type UserPassportContextData = {
     requestSignedZuID: () => void
@@ -24,7 +25,6 @@ type UserPassportProviderProps = {
 export const UserPassportContext = createContext({} as UserPassportContextData)
 
 export function UserPassportContextProvider({ children }: UserPassportProviderProps) {
-    const [uuid, setUuid] = useState<string | undefined>()
     const [pcdStr, setPcdStr] = useState("")
     const router = useRouter()
     const [loadingPassport, setLoadingPassport] = useState({
@@ -33,15 +33,13 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
     })
     const [errorPassport, setErrorPassport] = useState(false)
 
-    const PASSPORT_URL = "https://zupass.org/"
-    const PASSPORT_SERVER_URL = "https://api.pcd-passport.com/"
-
-    const [pcdStr2, _passportPendingPCDStr] = usePassportPopupMessages()
+    const PASSPORT_URL: string = process.env.PASSPORT_URL as string;
 
     function requestSignedZuID() {
         setLoadingPassport({ step: 1, text: "Waiting to prove passport..." })
-        const proofUrl = openSignedZuzaluUUIDPopup(PASSPORT_URL, `${window.location.origin}/popup`, "consumer-client")
-        // requestProofFromPassport(proofUrl)
+        const proofUrl = getWithoutProvingUrl(PASSPORT_URL, `${window.location.origin}/popup`, EdDSATicketPCDPackage.name);
+        const popupUrl = `/popup?proofUrl=${encodeURIComponent(proofUrl)}`;
+        window.open(popupUrl, "_blank", "width=360,height=480,top=100,popup");
     }
 
     useEffect(() => {
@@ -53,34 +51,43 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
         window.addEventListener("message", receiveMessage, false)
     }, [])
 
-    const [signatureProofValid, setSignatureProofValid] = useState<boolean | undefined>()
-    const onProofVerified = (valid: boolean) => {
-        setSignatureProofValid(valid)
-    }
-
-    const { signatureProof } = useSemaphoreSignatureProof(pcdStr, onProofVerified)
+    const [participant, setParticipant] = useState<User | null>(null);
 
     useEffect(() => {
-        if (signatureProofValid && signatureProof) {
-            const userUuid = signatureProof.claim.signedMessage
-            setUuid(userUuid)
-        }
-    }, [signatureProofValid, signatureProof])
+      if (pcdStr.length > 0) {
+        (async () => {
+            // @todo exception?
+            await EdDSAPCDPackage.init?.({});
+            await EdDSATicketPCDPackage.init?.({});
+            console.log(pcdStr);
+            const serializedPCD = JSON.parse(pcdStr);
+            const pcd = await EdDSATicketPCDPackage.deserialize(serializedPCD.pcd);
+            console.log(pcd);
+            const verified = await EdDSATicketPCDPackage.verify(pcd);
+            console.log(verified);
+            if (verified) {
+                const { ticketId, attendeeEmail, attendeeSemaphoreId, attendeeName } = pcd.claim.ticket;
+                const user: User = { email: attendeeEmail, uuid: ticketId, commitment: attendeeSemaphoreId, name: attendeeName };
+                setParticipant(user);
+            }
+        })();
+      }
+    }, [pcdStr, setParticipant])
 
-    const { participant } = useFetchParticipant(PASSPORT_SERVER_URL, uuid)
-
-    const loginProof = async (participant1: any, signatureProofProps: any) => {
+    const loginProof = async () => {
         try {
+            console.log("sending data to api");
             await axios({
                 method: "post",
-                url: "https://zuzalu.city/api/passport-user-login/",
-                data: { participant1, pcdStr },
+                url: "/api/passport-user-login/",
+                data: { pcdStr },
                 headers: {
                     "Content-Type": "application/json",
                     htmlcode: process.env.KEY_TO_API as string
                 }
             })
                 .then((response) => {
+                    console.log(response);
                     if (response.status === 200) {
                         setLoadingPassport({
                             step: 4,
@@ -100,6 +107,7 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
                     }
                 })
                 .catch((error) => {
+                    console.log(error);
                     setErrorPassport(true)
                 })
         } catch (error1) {
@@ -111,7 +119,7 @@ export function UserPassportContextProvider({ children }: UserPassportProviderPr
     useEffect(() => {
         if (participant) {
             setLoadingPassport({ step: 3, text: "Logging you in..." })
-            loginProof(participant, signatureProof)
+            loginProof();
         }
     }, [participant])
 
