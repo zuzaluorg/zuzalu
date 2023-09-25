@@ -19,6 +19,16 @@ const Footer = () => (
                             About
                         </h3>
                     </NextLink>
+                </div>
+            </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row  ">
+            <div className="mt-[15px] md:ml-[64px] md:mt-0">
+                <h2 className=" font-[600]  mb-[5px] text-[18px] md:text-[20px] md:mb-[16px] text-[rgba(255,255,255,0.7)]">
+                   Zuconnect
+                </h2>
+                <div>
                     <NextLink href={"/faq"}>
                         <h3 className="font-[400]  mb-[7px] text-[14px] md:text-[18px] text-[white] cursor-pointer md:mb-[14px]">
                             FAQ

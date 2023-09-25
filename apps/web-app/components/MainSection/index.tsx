@@ -20,10 +20,15 @@ const MainSection = () => (
                     where the leading innovators in crypto, AI, governance, decentralized science, and culture unite in
                     the heart of Istanbul to co-work, break down siloes, and have fun.
                 </h1>
-                <div className="flex">
+                <div className="flex items-center gap-8">
                     <a href="https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8/book" target="_blank">
                         <button className="flex w-full md:w-fit items-center justify-center bg-zulalu-primary text-white py-[14px] px-[30px] rounded-[10px] mt-5 text-[18px] font-medium">
                             Apply for ZuConnect
+                        </button>
+                    </a>
+                    <a href="/faq">
+                        <button className="flex w-full md:w-fit items-center justify-center bg-zulalu-primary text-white py-[14px] px-[30px] rounded-[10px] mt-5 text-[18px] font-medium">
+                            More details
                         </button>
                     </a>
                 </div>
