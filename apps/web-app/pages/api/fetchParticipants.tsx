@@ -6,7 +6,7 @@ const supabaseUrl = "https://polcxtixgqxfuvrqgthn.supabase.co"
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey as string)
 
-const allowedOrigins = ["https://zuzalu.city"]
+const allowedOrigins = ["https://zuzalu.city", "http://localhost:3300"]
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     // Check for the 'Origin' header in the request

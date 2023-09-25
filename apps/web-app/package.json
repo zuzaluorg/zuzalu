@@ -2,14 +2,16 @@
     "name": "web-app",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --port 3300",
         "build": "next build",
         "start": "next start"
     },
     "dependencies": {
         "@headlessui/react": "^1.7.2",
         "@material-tailwind/react": "^1.4.2",
-        "@pcd/passport-interface": "latest",
+        "@pcd/eddsa-pcd": "^0.1.1",
+        "@pcd/eddsa-ticket-pcd": "^0.1.1",
+        "@pcd/passport-interface": "0.6.2",
         "@pcd/pcd-collection": "latest",
         "@pcd/pcd-types": "latest",
         "@react-google-maps/api": "^2.18.1",
