@@ -1,10 +1,28 @@
-const withPWA = require("next-pwa")({
+import remarkGfm from "remark-gfm";
+import createMDX from "@next/mdx";
+import nextPWA from "next-pwa";
+
+
+const withPWA = nextPWA({
     dest: "public",
     register: true,
     skipWaiting: true
 })
 
-module.exports = withPWA({
+const withMDX = createMDX({
+    extension: /\.mdx?$/,
+    options: {
+      // If you use remark-gfm, you'll need to use next.config.mjs
+      // as the package is ESM only
+      // https://github.com/remarkjs/remark-gfm#install
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [],
+      // If you use `MDXProvider`, uncomment the following line.
+      // providerImportSource: "@mdx-js/react",
+    },
+  })
+
+export default withMDX(withPWA({
     images: {
         remotePatterns: [
             {
@@ -19,6 +37,7 @@ module.exports = withPWA({
             }
         ]
     },
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     reactStrictMode: true,
     eslint: {
         ignoreDuringBuilds: true
@@ -51,4 +70,4 @@ module.exports = withPWA({
 
         return config
     }
-})
+}))
