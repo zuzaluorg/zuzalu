@@ -94,9 +94,7 @@ const Header = () => {
                         }
                         target="_blank"
                     >
-                        <li
-                            className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px]`}
-                        >
+                        <li className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px]`}>
                             Newsletter
                         </li>
                     </a>
@@ -107,16 +105,12 @@ const Header = () => {
                         }
                         target="_blank"
                     >
-                        <li
-                            className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px]}`}
-                        >
+                        <li className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px]}`}>
                             Zuzalu Playbook
                         </li>
                     </a>
                     <a href={"https://zupass.org/"} target="_blank">
-                        <li
-                            className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px]`}
-                        >
+                        <li className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px]`}>
                             Zuzalu Passport
                         </li>
                     </a>
@@ -136,7 +130,7 @@ const Header = () => {
                                 router.asPath === "/faq" ? "font-[700]" : "font-[400]"
                             }`}
                         >
-                            Apply Now
+                            Apply For Waitlist
                         </li>
                     </a>
                     {/* {!userInfo && (
