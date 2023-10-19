@@ -198,7 +198,7 @@ const EventPage = ({ event, sessions, allSessions }: Props) => {
                                 target="_blank"
                             >
                                 <div className="w-full md:w-auto justify-center text-center md:w-auto bg-white border border-primary py-[8px] px-[5px] md:px-[15px] text-zulalu-primary font-[600] rounded-[8px] text-[12px] md:text-[16px]">
-                                    <p>APPLY NOW</p>
+                                    <p>APPLY FOR WAITLIST</p>
                                 </div>
                             </a>
                         )}
