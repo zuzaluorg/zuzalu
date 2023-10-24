@@ -124,13 +124,13 @@ const Header = () => {
                             ZApps
                         </li>
                     </NextLink>
-                    <a href={"https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8/book"} target="_blank">
+                    <a href={"https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8"} target="_blank">
                         <li
                             className={`flex items-center gap-2 cursor-pointer text-[#F8FFFE] text-[18px] ${
                                 router.asPath === "/faq" ? "font-[700]" : "font-[400]"
                             }`}
                         >
-                            Apply For Waitlist
+                            Registrations closed
                         </li>
                     </a>
                     {/* {!userInfo && (
@@ -222,8 +222,14 @@ const Header = () => {
                         </li>
                     </a>
                     {!userInfo ? (
-                        <a href="https://airtable.com/shrRZrZbozPE2g6HH" target="_blank" rel="noopener noreferrer">
-                            <li className="cursor-pointer font-[400] text-[18px] text-[#F8FFFE]">Apply Now</li>
+                        <a
+                            href="https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <li className="cursor-pointer font-[400] text-[18px] text-[#F8FFFE]">
+                                Registrations closed
+                            </li>
                         </a>
                     ) : (
                         <NextLink href={"/myprofile"}>
