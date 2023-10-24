@@ -23,7 +23,7 @@ const MainSection = () => (
                 <div className="flex items-center gap-8">
                     <a href="https://app.tripsha.com/trip/64ff3a6eb4b6950008dee4f8" target="_blank">
                         <button className="flex w-full md:w-fit items-center justify-center bg-zulalu-primary text-white py-[14px] px-[30px] rounded-[10px] mt-5 text-[18px] font-medium">
-                            Registrations closed
+                            Apply
                         </button>
                     </a>
                     <a href="/faq">

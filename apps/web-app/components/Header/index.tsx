@@ -130,7 +130,7 @@ const Header = () => {
                                 router.asPath === "/faq" ? "font-[700]" : "font-[400]"
                             }`}
                         >
-                            Registrations closed
+                            Apply
                         </li>
                     </a>
                     {/* {!userInfo && (
@@ -227,9 +227,7 @@ const Header = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <li className="cursor-pointer font-[400] text-[18px] text-[#F8FFFE]">
-                                Registrations closed
-                            </li>
+                            <li className="cursor-pointer font-[400] text-[18px] text-[#F8FFFE]">Apply</li>
                         </a>
                     ) : (
                         <NextLink href={"/myprofile"}>
